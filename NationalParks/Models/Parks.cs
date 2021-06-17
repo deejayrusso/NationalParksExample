@@ -97,13 +97,13 @@ namespace NationalParks.Models
 
     public class Standardhours
     {
-        public string wednesday { get; set; }
-        public string monday { get; set; }
-        public string thursday { get; set; }
-        public string sunday { get; set; }
-        public string tuesday { get; set; }
-        public string friday { get; set; }
-        public string saturday { get; set; }
+        public string Sunday { get; set; }
+        public string Monday { get; set; }
+        public string Tuesday { get; set; }
+        public string Wednesday { get; set; }
+        public string Thursday { get; set; }
+        public string Friday { get; set; }
+        public string Saturday { get; set; }
     }
 
     public class Alternate
