@@ -1,6 +1,7 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 body {
+    background-color: #336600;
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -28,10 +29,99 @@ body {
     margin: 15px;
 }
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
+
+
+
+
+@media only screen and (max-width: 600px) {
+    /* For mobile phones*/
+    .leftMenu, .rightMenu, .mainBody {
+        width: 100%;
     }
 }
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    /* For tablets */
+    .leftMenu, .rightMenu, .mainBody {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 912px) {
+    /* For desktops */
+    .leftMenu {
+        width: 26%;
+    }
+
+    .mainBody {
+        width: 50%;
+    }
+
+    .rightMenu {
+        width: 24%
+    }
+}
+
+.leftMenu {
+    float: left;
+    color: black;
+    text-align: center;
+}
+
+
+.rightMenu {
+    float: left;
+    color: #336600;
+}
+
+.mainBody {
+    float: left;
+    color: #000000;
+    text-align: center;
+    background-color: #cfc493;
+}
+
+.header {
+    text-align: center;
+    background-color: #336600;
+    color: #100038;
+    padding: 15px;
+}
+
+.rightMenuDecorate {
+    background-color: #336600;
+    color: #000000;
+    text-align: center;
+    font-size: 14px;
+    margin-right: 40px;
+}
+
+.ThreeColumnBody::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.footer {
+    background-color: #cfc493;
+    color: #336600;
+    text-align: center;
+    font-style: italic;
+    font-size: 20px;
+    padding: 15px;
+    border: 2px double green;
+}
+
+.center {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+
+
+
