@@ -28,8 +28,30 @@ body {
 #qrCode {
     margin: 15px;
 }
+.text-display {
+    font-size: 10px;
+    font-family: Arial;
+    width: 500px;
+    height:30px;
+    word-wrap: break-word;
+}
+.textsmall-display {
+    font-size: 10px;
+    font-family: Arial;
+    width: 100px;
+}
 
-
+.textarea-display {
+    font-size: 10px;
+    font-family: Arial;
+    width: 500px;
+    height:70px;
+    word-wrap: break-word;
+}
+.label-display {
+    font-size: 20px;
+    width:120px;
+}
 
 
 

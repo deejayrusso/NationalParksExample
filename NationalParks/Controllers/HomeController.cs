@@ -22,7 +22,7 @@ namespace NationalParks.Controllers
             APIHandler webHandler = new APIHandler();
             Parks parks = webHandler.GetParks();
 
-            return View(parks);
+            return View("Parks",parks);
         }
 
         public IActionResult Privacy()
@@ -43,6 +43,13 @@ namespace NationalParks.Controllers
         public IActionResult History()
         {
             return View();
+        }
+        public IActionResult Admin()
+        {
+            APIHandler webHandler = new APIHandler();
+            Parks parks = webHandler.GetParks();
+
+            return View("Admin", parks);
         }
     }
 }
