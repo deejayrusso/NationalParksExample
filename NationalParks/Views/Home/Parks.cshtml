@@ -6,33 +6,36 @@
 
 @foreach (var item in Model.data)
 {
+<div style="font-size: 16px">
+    <h3>
+        @Html.DisplayFor(modelItem => item.fullName)
+    </h3>
     <div>
-        <h3>
-            @Html.DisplayFor(modelItem => item.fullName)
-        </h3>
-        <div>
-            @Html.DisplayFor(modelItem => item.description)
-        </div>
-        <a href="@item.url" target="_blank">
-            @Html.DisplayFor(modelItem => item.url)
-        </a>
-        <div>
-            <h5>Directions: </h5>
-            @Html.DisplayFor(modelItem => item.directionsInfo)
-        </div>
-        <div>
-            <h5>Weather: </h5>
-            @Html.DisplayFor(modelItem => item.weatherInfo)
-        </div>
-        <div>
-            <h5>Hours: </h5>
-            @foreach (var day in item.operatingHours)
+        @Html.DisplayFor(modelItem => item.description)
+    </div>
+    <a href="@item.url" target="_blank">
+        @Html.DisplayFor(modelItem => item.url)
+    </a>
+    <div>
+        <h4>Directions: </h4>
+        @Html.DisplayFor(modelItem => item.directionsInfo)
+    </div>
+    <div>
+        <h4>Weather: </h4>
+        @Html.DisplayFor(modelItem => item.weatherInfo)
+    </div>
+    <div>
+        <h4>Hours: </h4>
+        <ul>
+                @foreach (var day in item.operatingHours.Take(7))
                 {
                     @Html.DisplayFor(d => day.standardHours)
                 }
-        </div>
+        </ul>
     </div>
-    <br />
+
+</div>
+<hr />
 }
 
 <script>

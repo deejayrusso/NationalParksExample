@@ -1,7 +1,7 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 body {
-    background-color: #336600;
+    background-color: #9aca9a;
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -70,8 +70,8 @@ body {
 
 
 .rightMenu {
-    float: left;
-    color: #336600;
+    float: right;
+    color: black;
 }
 
 .mainBody {
@@ -83,13 +83,13 @@ body {
 
 .header {
     text-align: center;
-    background-color: #336600;
+    background-color: #9aca9a;
     color: #100038;
     padding: 15px;
 }
 
 .rightMenuDecorate {
-    background-color: #336600;
+    background-color: #9aca9a;
     color: #000000;
     text-align: center;
     font-size: 14px;
@@ -104,7 +104,7 @@ body {
 
 .footer {
     background-color: #cfc493;
-    color: #336600;
+    color: #9aca9a;
     text-align: center;
     font-style: italic;
     font-size: 20px;
@@ -115,13 +115,19 @@ body {
 .center {
     position: absolute;
     left: 50%;
-    top: 25%;
+    top: 30%;
     transform: translate(-50%, -50%);
     padding: 10px;
     font-size: x-large;
     font-weight: bold;
 }
 
+ul {
+    columns: 4;
+    -webkit-columns: 4;
+    -moz-columns: 4;
+}
 
-
-
+    ul :nth-of-type(1n+15) {
+        display: none;
+    }
