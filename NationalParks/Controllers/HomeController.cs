@@ -44,12 +44,5 @@ namespace NationalParks.Controllers
         {
             return View();
         }
-        public IActionResult Admin()
-        {
-            APIHandler webHandler = new APIHandler();
-            Parks parks = webHandler.GetParks();
-
-            return View("Admin", parks);
-        }
     }
 }

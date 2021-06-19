@@ -1,0 +1,38 @@
+﻿@model List<NationalParks.Models.Guest>
+<h1>Guests</h1>
+<hr />
+<div>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Park</th>
+            <th>Date of Visit</th>
+            <th>Rating</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.TextBoxFor(modelItem => item.Name, new { htmlAttributes = new { @class = "form-control", maxlength = 50 } })
+                </td>
+                <td>
+                    @Html.TextBoxFor(modelItem => item.Park, new { htmlAttributes = new { @class = "form-control", maxlength = 50 } })
+                </td>
+                <td>
+                    @Html.TextBoxFor(modelItem => item.DateofVisit, String.Format("{0:d}", item.DateofVisit.ToShortDateString()), new { @class = "datefield", type = "date" })
+                </td>
+                <td>
+                    @Html.TextBoxFor(modelItem => item.Rating, new { htmlAttributes = new { @class = "form-control", maxlength = 50 } })
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+<script>
+    alertDbSave(@ViewBag.dbSuccessComp);
+</script>
