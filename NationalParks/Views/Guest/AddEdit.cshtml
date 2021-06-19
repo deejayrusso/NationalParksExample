@@ -1,0 +1,47 @@
+﻿@model NationalParks.Models.Guest
+<h1>Add/Edit Guest</h1>
+<hr />
+<body>
+    @using (Html.BeginForm("Save", "Guest", FormMethod.Post))
+    {
+         <table>
+        <tr>
+        <tr>
+            <td>@Html.Label("Name")</td>
+            <td>
+                @Html.TextBoxFor(m => m.Name, new { htmlAttributes = new { @class = "form-control", maxlength = 50 } })
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Park")</td>
+            <td>
+                @Html.TextBoxFor(m => m.Park, new { htmlAttributes = new { @class = "form-control", maxlength = 50 } })
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Date Of Visit")</td>
+            <td>
+                @Html.TextBoxFor(m => m.DateofVisit)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Rating")</td>
+            <td>
+                @Html.TextBoxFor(m => m.Rating, new { htmlAttributes = new { @class = "form-control", maxlength = 50 } })
+            </td>
+        </tr>
+        <tr><td></td></tr>
+        <tr>
+            <td>
+                <p>
+                    <input type="submit" value="Save" />
+                </p>
+                @Html.ActionLink("Cancel", "Cancel")
+
+                @Html.HiddenFor(m => m.Id)
+            </td>
+        </tr>
+
+    </table>
+    }
+</body>
