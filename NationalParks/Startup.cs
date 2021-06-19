@@ -36,11 +36,11 @@ namespace NationalParks
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             //This ensures that the database and tables are created as per the Models.
-            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            /*using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
                 var context = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
                 context.Database.EnsureCreated();
-            }
+            }*/
 
             // https://stackoverflow.com/a/58072137/1385857
             if (env.IsDevelopment())
