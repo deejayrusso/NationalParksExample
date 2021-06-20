@@ -23,6 +23,14 @@ namespace NationalParks.Controllers
         public IActionResult Index()
         {
             List<Guest> guestList = dbContext.Guests.ToList();
+            var labels = guestList.GroupBy(x => x.Park).Select(x => x.FirstOrDefault()).ToList();
+
+            string[] ChartLabels = labels.Select(x => x.Park.ToString()).ToArray();
+            ViewBag.Labels = String.Join(",", ChartLabels.Select(d => "'" + d + "'"));
+
+            var chart = guestList.GroupBy(m => m.Park).Select(g => g.Count()).ToList();
+            ViewBag.Data = String.Join(",", chart.Select(d => d));
+
             return View(guestList);
         }
 
@@ -41,6 +49,22 @@ namespace NationalParks.Controllers
             dbContext.Guests.Remove(guest);
             dbContext.SaveChanges();
             guestList = dbContext.Guests.ToList();
+            var labels = guestList.GroupBy(x => x.Park).Select(x => x.FirstOrDefault()).ToList();
+
+            string[] ChartLabels = labels.Select(x => x.Park.ToString()).ToArray();
+            ViewBag.Labels = String.Join(",", ChartLabels.Select(d => "'" + d + "'"));
+
+            var chart = guestList.GroupBy(m => m.Park).Select(g => g.Count()).ToList();
+            ViewBag.Data = String.Join(",", chart.Select(d => d));
+            //         logins
+            //.GroupBy(l => l.Date)
+            //.Select(g => new
+            //{
+            //    Date = g.Key,
+            //    Count = g.Select(l => l.Login).Distinct().Count()
+            //});
+
+
             return View("Index", guestList);
         }
 
@@ -51,6 +75,13 @@ namespace NationalParks.Controllers
         public IActionResult Cancel()
         {
             List<Guest> guestList = dbContext.Guests.ToList();
+            var labels = guestList.GroupBy(x => x.Park).Select(x => x.FirstOrDefault()).ToList();
+
+            string[] ChartLabels = labels.Select(x => x.Park.ToString()).ToArray();
+            ViewBag.Labels = String.Join(",", ChartLabels.Select(d => "'" + d + "'"));
+
+            var chart = guestList.GroupBy(m => m.Park).Select(g => g.Count()).ToList();
+            ViewBag.Data = String.Join(",", chart.Select(d => d));
             return View("Index", guestList);
         }
         [HttpPost]
@@ -63,6 +94,13 @@ namespace NationalParks.Controllers
    
             dbContext.SaveChanges();
             List<Guest> guestList = dbContext.Guests.ToList();
+            var labels = guestList.GroupBy(x => x.Park).Select(x => x.FirstOrDefault()).ToList();
+
+            string[] ChartLabels = labels.Select(x => x.Park.ToString()).ToArray();
+            ViewBag.Labels = String.Join(",", ChartLabels.Select(d => "'" + d + "'"));
+
+            var chart = guestList.GroupBy(m => m.Park).Select(g => g.Count()).ToList();
+            ViewBag.Data = String.Join(",", chart.Select(d => d));
             return View("Index", guestList);
         }
     }
