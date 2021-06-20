@@ -28,7 +28,10 @@ namespace NationalParks.Controllers
             string[] ChartLabels = labels.Select(x => x.Park.ToString()).ToArray();
             ViewBag.Labels = String.Join(",", ChartLabels.Select(d => "'" + d + "'"));
 
-            var chart = guestList.GroupBy(m => m.Park).Select(g => g.Count()).ToList();
+            //var chart1 = guestList.GroupBy(m => m.Park).Select(group => new {Avg = group.Average(f => f.Rating) });
+            var chart = guestList.GroupBy(m => m.Park).Select(group => group.Average(f => f.Rating));
+
+            //var chart = guestList.GroupBy(m => m.Park).Select(g => g.Count()).ToList();
             ViewBag.Data = String.Join(",", chart.Select(d => d));
 
             return View(guestList);
@@ -54,7 +57,7 @@ namespace NationalParks.Controllers
             string[] ChartLabels = labels.Select(x => x.Park.ToString()).ToArray();
             ViewBag.Labels = String.Join(",", ChartLabels.Select(d => "'" + d + "'"));
 
-            var chart = guestList.GroupBy(m => m.Park).Select(g => g.Count()).ToList();
+            var chart = guestList.GroupBy(m => m.Park).Select(group => group.Average(f => f.Rating));
             ViewBag.Data = String.Join(",", chart.Select(d => d));
             //         logins
             //.GroupBy(l => l.Date)
@@ -80,7 +83,7 @@ namespace NationalParks.Controllers
             string[] ChartLabels = labels.Select(x => x.Park.ToString()).ToArray();
             ViewBag.Labels = String.Join(",", ChartLabels.Select(d => "'" + d + "'"));
 
-            var chart = guestList.GroupBy(m => m.Park).Select(g => g.Count()).ToList();
+            var chart = guestList.GroupBy(m => m.Park).Select(group => group.Average(f => f.Rating));
             ViewBag.Data = String.Join(",", chart.Select(d => d));
             return View("Index", guestList);
         }
@@ -99,7 +102,7 @@ namespace NationalParks.Controllers
             string[] ChartLabels = labels.Select(x => x.Park.ToString()).ToArray();
             ViewBag.Labels = String.Join(",", ChartLabels.Select(d => "'" + d + "'"));
 
-            var chart = guestList.GroupBy(m => m.Park).Select(g => g.Count()).ToList();
+            var chart = guestList.GroupBy(m => m.Park).Select(group => group.Average(f => f.Rating));
             ViewBag.Data = String.Join(",", chart.Select(d => d));
             return View("Index", guestList);
         }

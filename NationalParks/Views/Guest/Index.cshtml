@@ -78,7 +78,7 @@
         labels: [@Html.Raw((ViewBag.Labels))],
         datasets: [
           {
-            label: "Park Visitors (thousands)",
+            label: "Average Guest Ratings",
             data: [@(ViewBag.Data)]
           }
         ]
@@ -87,7 +87,7 @@
         legend: { display: false },
         title: {
           display: true,
-          text: "Number of Park Visitors"
+          text: "Average Guest Ratings"
         }
       }
     });
