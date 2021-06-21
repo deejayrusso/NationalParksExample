@@ -94,6 +94,7 @@ body {
 .rightMenu {
     float: right;
     color: black;
+    text-align: center;
 }
 
 .mainBody {
@@ -125,8 +126,7 @@ body {
 }
 
 .footer {
-    background-color: #cfc493;
-    color: #9aca9a;
+   
     text-align: center;
     font-style: italic;
     font-size: 20px;
